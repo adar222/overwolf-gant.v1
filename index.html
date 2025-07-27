@@ -1,1 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Overwolf GTM Plan</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reset.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/black.min.css" id="theme">
+
+    <!-- Google Fonts Import -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom Overwolf Theme */
+        :root {
+            --r-background-color: #101010;
+            --r-main-font: 'Lato', sans-serif;
+            --r-heading-font: 'Montserrat', sans-serif;
+            --r-main-color: #FFFFFF;
+            --r-heading-color: #FFFFFF;
+            --r-link-color: #9D4EDD;
+            --r-link-color-hover: #C77DFF;
+            --r-selection-background-color: #9D4EDD;
+            
+            --accent-purple: #9D4EDD;
+            --accent-teal: #48BFE3;
+        }
+
+        .reveal .slides h1, .reveal .slides h2, .reveal .slides h3 {
+            text-transform: none;
+        }
+
+        .reveal .slides section .fragment.fade-in-then-out {
+            opacity: 0;
+            display: inline-block;
+        }
+        .reveal .slides section .fragment.fade-in-then-out.current-fragment {
+            opacity: 1;
+        }
+        .reveal .slides section .fragment.fade-in-then-out.visible:not(.current-fragment) {
+            opacity: 0;
+            display: inline-block;
+        }
+        
+        /* Gantt Chart Styling */
+        .gantt-chart {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+            font-size: 16px;
+        }
+        .gantt-chart th, .gantt-chart td {
+            padding: 8px;
+            text-align: center;
+            border: 1px solid #333;
+        }
+        .gantt-chart th {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            color: var(--accent-purple);
+        }
+        .gantt-chart .task-name {
+            text-align: left;
+            width: 25%;
+            font-weight: 700;
+        }
+        
+        .gantt-bar-cell {
+            position: relative;
+            height: 30px;
+        }
+        
+        .gantt-bar {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 20px;
+            background-color: var(--accent-purple);
+            border-radius: 5px;
+            opacity: 0;
+            animation: slideIn 0.8s ease-out forwards;
+        }
+        
+        @keyframes slideIn {
+            from { width: 0; opacity: 0; }
+            to { opacity: 1; }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            
+            <!-- Slide 1: Gantt Chart -->
+            <section>
+                <h2 style="font-family: 'Montserrat', sans-serif;">The First 90 Days: A Phased Execution Plan</h2>
+                <table class="gantt-chart">
+                    <thead>
+                        <tr>
+                            <th class="task-name">Task/Week →</th>
+                            <th>Nov 1-7</th>
+                            <th>Nov 8-14</th>
+                            <th>Nov 15-21</th>
+                            <th>Nov 22-30</th>
+                            <th>Dec 1-7</th>
+                            <th>Dec 8-14</th>
+                            <th>Dec 15-21</th>
+                            <th>Dec 22-31</th>
+                            <th>Jan 1-7</th>
+                            <th>Jan 8-15</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="task-name">GTM Strategy & Positioning</td>
+                            <td colspan="3" class="gantt-bar-cell"><div class="gantt-bar" style="width: 98%; left: 1%; animation-delay: 0.2s;"></div></td>
+                            <td colspan="7"></td>
+                        </tr>
+                        <tr>
+                            <td class="task-name">Product/Tech Stack Finalized</td>
+                            <td colspan="6" class="gantt-bar-cell"><div class="gantt-bar" style="width: 98%; left: 1%; animation-delay: 0.3s;"></div></td>
+                            <td colspan="4"></td>
+                        </tr>
+                        <tr>
+                            <td class="task-name">Publisher Target List</td>
+                            <td colspan="3" class="gantt-bar-cell"><div class="gantt-bar" style="width: 98%; left: 1%; animation-delay: 0.4s;"></div></td>
+                            <td colspan="7"></td>
+                        </tr>
+                        <tr>
+                            <td class="task-name">CRM Selection & Setup</td>
+                            <td></td>
+                            <td colspan="4" class="gantt-bar-cell"><div class="gantt-bar" style="width: 98%; left: 1%; animation-delay: 0.5s;"></div></td>
+                            <td colspan="5"></td>
+                        </tr>
+                        <tr>
+                            <td class="task-name">Internal Alignment</td>
+                            <td colspan="5" class="gantt-bar-cell"><div class="gantt-bar" style="width: 98%; left: 1%; animation-delay: 0.6s;"></div></td>
+                            <td colspan="5"></td>
+                        </tr>
+                        <tr>
+                            <td class="task-name">Publisher Outreach Materials</td>
+                            <td colspan="2"></td>
+                            <td colspan="4" class="gantt-bar-cell"><div class="gantt-bar" style="width: 98%; left: 1%; animation-delay: 0.7s;"></div></td>
+                            <td colspan="4"></td>
+                        </tr>
+                        <tr>
+                            <td class="task-name">Initial Outreach & Funnel Building</td>
+                            <td colspan="3"></td>
+                            <td colspan="5" class="gantt-bar-cell"><div class="gantt-bar" style="width: 98%; left: 1%; animation-delay: 0.8s;"></div></td>
+                            <td colspan="2"></td>
+                        </tr>
+                        <tr>
+                            <td class="task-name">Integration Guide & Docs</td>
+                            <td colspan="4"></td>
+                            <td colspan="4" class="gantt-bar-cell"><div class="gantt-bar" style="width: 98%; left: 1%; animation-delay: 0.9s;"></div></td>
+                            <td colspan="2"></td>
+                        </tr>
+                        <tr>
+                            <td class="task-name">Tech Integration Testing</td>
+                            <td colspan="5"></td>
+                            <td colspan="4" class="gantt-bar-cell"><div class="gantt-bar" style="width: 98%; left: 1%; animation-delay: 1.0s;"></div></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="task-name">Publisher Agreements & Legal</td>
+                            <td colspan="5"></td>
+                            <td colspan="4" class="gantt-bar-cell"><div class="gantt-bar" style="width: 98%; left: 1%; animation-delay: 1.1s;"></div></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="task-name">Beta Publisher Onboarding</td>
+                            <td colspan="7"></td>
+                            <td colspan="3" class="gantt-bar-cell"><div class="gantt-bar" style="width: 98%; left: 1%; animation-delay: 1.2s;"></div></td>
+                        </tr>
+                        <tr>
+                            <td class="task-name">Go Live—First Publisher Batch</td>
+                            <td colspan="8"></td>
+                            <td colspan="2" class="gantt-bar-cell"><div class="gantt-bar" style="width: 98%; left: 1%; animation-delay: 1.3s; background-color: var(--accent-teal);"></div></td>
+                        </tr>
+                        <tr>
+                            <td class="task-name">Monitor, Optimize, Feedback</td>
+                            <td colspan="6"></td>
+                            <td colspan="4" class="gantt-bar-cell"><div class="gantt-bar" style="width: 98%; left: 1%; animation-delay: 1.4s;"></div></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"></script>
+    <script>
+        // More info about initialization & config:
+        // - https://revealjs.com/initialization/
+        // - https://revealjs.com/config/
+        Reveal.initialize({
+            // --- FIX: Disabled history to prevent security error in preview environment ---
+            hash: false, 
+            // Learn about plugins: https://revealjs.com/plugins/
+        });
+    </script>
+</body>
+</html>
 
